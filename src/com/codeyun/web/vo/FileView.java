@@ -3,6 +3,9 @@ package com.codeyun.web.vo;
 public class FileView extends AbstractFile{
 	private long size;
 	private String icon;
+	public FileView() {
+		this.setFile(true);
+	}
 	public long getSize() {
 		return size;
 	}

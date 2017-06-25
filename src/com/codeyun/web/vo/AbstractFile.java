@@ -3,6 +3,14 @@ package com.codeyun.web.vo;
 public abstract class AbstractFile {
 	private String name;
 	private String time;
+	private boolean isFile;
+	
+	public boolean isFile() {
+		return isFile;
+	}
+	public void setFile(boolean isFile) {
+		this.isFile = isFile;
+	}
 	public String getName() {
 		return name;
 	}
