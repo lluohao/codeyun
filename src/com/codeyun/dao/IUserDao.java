@@ -1,8 +1,8 @@
 package com.codeyun.dao;
 
-import com.codeyun.web.vo.User;
+import com.codeyun.dao.doo.User;
 
 public interface IUserDao {
 	User findById(int id);
-	User findByName(String name);
+	int insertUser(User user);
 }

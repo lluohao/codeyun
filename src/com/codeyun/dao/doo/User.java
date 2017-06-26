@@ -1,4 +1,4 @@
-package com.codeyun.web.vo;
+package com.codeyun.dao.doo;
 
 import java.sql.Timestamp;
 

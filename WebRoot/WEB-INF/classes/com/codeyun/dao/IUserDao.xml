@@ -5,4 +5,7 @@
 	<select id="findById" parameterType="int" resultType="User">
 		SELECT * FROM user WHERE id = #{id}
 	</select>
+	<insert id="insertUser" parameterType="User" useGeneratedKeys="true" keyProperty="">
+		INSERT INTO user VALUES(null,#{name},#{password},#{email},#{phone},#{time})
+	</insert>
 </mapper>

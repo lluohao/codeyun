@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.codeyun.common.image.GaussImageNoise;
 import com.codeyun.common.image.VerificationImage;
 import com.codeyun.service.IPhoneCodeService;
-import com.codeyun.service.PhoneCodeServiceImpl;
+import com.codeyun.service.impl.PhoneCodeServiceImpl;
 import com.codeyun.web.vo.PhoneCodeView;
 
 @Controller
