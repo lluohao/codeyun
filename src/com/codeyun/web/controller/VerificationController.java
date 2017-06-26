@@ -14,11 +14,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.codeyun.common.image.GaussImageNoise;
 import com.codeyun.common.image.VerificationImage;
-import com.codeyun.common.util.StringUtil;
+import com.codeyun.service.IPhoneCodeService;
+import com.codeyun.service.PhoneCodeServiceImpl;
 import com.codeyun.web.vo.PhoneCodeView;
 
 @Controller
 public class VerificationController {
+	private IPhoneCodeService service = new PhoneCodeServiceImpl();
 	@RequestMapping("/verifiImage")
 	public void verifiImage(@RequestParam String key,
 			@RequestParam(defaultValue = "200") int width,
@@ -44,6 +46,7 @@ public class VerificationController {
 	
 	@RequestMapping("/phoneCode")
 	public @ResponseBody PhoneCodeView phoneCode(HttpSession session, @RequestParam String phone){
-		return null;
+		return service.sendVerifiCode(phone, session);
 	}
+	
 }

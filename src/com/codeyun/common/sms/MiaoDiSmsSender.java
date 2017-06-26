@@ -50,26 +50,6 @@ public class MiaoDiSmsSender implements ISmsSender {
 			res.setSuccess(false);
 			return res;
 		}
-		// CloseableHttpClient client = HttpClientBuilder.create().build();
-		// HttpPost post = new HttpPost();
-		// List<NameValuePair> data = new ArrayList<>();
-		// data.add(new BasicNameValuePair("accountSid", ACCOUNT_SID));
-		// data.add(new BasicNameValuePair("to", request.getPhone()));
-		// data.add(new BasicNameValuePair("timestamp", timestamp));
-		// data.add(new BasicNameValuePair("sig", sig));
-		// try {
-		// data.add(new BasicNameValuePair("smsContent",
-		// URLEncoder.encode(request.getContent(), "UTF-8")));
-		// post.setURI(url.toURI());
-		// post.setEntity(new UrlEncodedFormEntity(data));
-		// CloseableHttpResponse response = client.execute(post);
-		// int code = response.getStatusLine().getStatusCode();
-		// CodeYunLogger.log(code+"");
-		// InputStream is = response.getEntity().getContent();
-		// CodeYunLogger.log(StringUtil.fromStream(is));
-		// } catch (Exception e) {
-		// e.printStackTrace();
-		// }
 	}
 
 }
