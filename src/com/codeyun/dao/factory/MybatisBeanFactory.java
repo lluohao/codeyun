@@ -10,7 +10,7 @@ public class MybatisBeanFactory {
 	static{
 		SqlSessionFactoryBuilder builder = new SqlSessionFactoryBuilder();
 		factory = builder.build(MybatisBeanFactory.class.getResourceAsStream("/conf/mybatis.xml"));
-		session = factory.openSession();
+		session = factory.openSession(true);
 	}
 	public static <T> T getDao(Class<T> cls){
 		return session.getMapper(cls);
