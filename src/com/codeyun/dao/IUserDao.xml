@@ -5,6 +5,15 @@
 	<select id="findById" parameterType="int" resultType="User">
 		SELECT * FROM user WHERE id = #{id}
 	</select>
+	<select id="findByName" parameterType="String" resultType="User">
+		SELECT * FROM user WHERE name = #{name}
+	</select>
+	<select id="findByPhone" parameterType="String" resultType="User">
+		SELECT * FROM user WHERE phone = #{phone}
+	</select>
+	<select id="findByEmail" parameterType="String" resultType="User">
+		SELECT * FROM user WHERE email = #{email}
+	</select>
 	<insert id="insertUser" parameterType="User" useGeneratedKeys="true" keyProperty="">
 		INSERT INTO user VALUES(null,#{name},#{password},#{email},#{phone},#{time})
 	</insert>
