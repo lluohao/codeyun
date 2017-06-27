@@ -45,8 +45,6 @@ public class PhoneCodeServiceImpl implements IPhoneCodeService {
 			return view;
 		}
 		Long last = (Long) session.getAttribute("phonecode.lasttime");
-		CodeYunLogger.log(last);
-		CodeYunLogger.log(System.currentTimeMillis());
 		if (last != null && System.currentTimeMillis() - last <= 60000) {
 			view.setCode(102);
 			return view;
