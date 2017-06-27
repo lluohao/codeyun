@@ -41,6 +41,7 @@ public class UserController {
 		}
 		return view;
 	}
+	
 	@RequestMapping("/login")
 	public @ResponseBody BasicView login(String name, String email, String phone, @RequestParam String sig, @RequestParam String timestamp, HttpSession session){
 		User user = null;
