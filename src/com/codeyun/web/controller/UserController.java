@@ -41,27 +41,33 @@ public class UserController {
 		}
 		return view;
 	}
-	
+
 	@RequestMapping("/login")
-	public @ResponseBody BasicView login(String name, String email, String phone, @RequestParam String sig, @RequestParam String timestamp, HttpSession session){
+	public @ResponseBody
+	BasicView login(String name, String email, String phone,
+			@RequestParam String sig, @RequestParam String timestamp,
+			HttpSession session) {
 		User user = null;
 		try {
-			if(!StringUtil.inLen(name, 3, 20)){
-				//login by name
+			if (StringUtil.inLen(name, 3, 20)) {
+				// login by name
 				user = service.login(name, sig, timestamp, 0);
 			}
-			if(StringUtil.isPhoneNumber(phone)){
-				//login by phone number
+			if (StringUtil.isPhoneNumber(phone)) {
+				// login by phone number
 				user = service.login(phone, sig, timestamp, 1);
 			}
-			if(StringUtil.isEmail(email)){
-				//login by email
+			if (StringUtil.isEmail(email)) {
+				// login by email
 				user = service.login(email, sig, timestamp, 2);
 			}
-			session.setAttribute("user", user);
+			if (user != null) {
+				session.setAttribute("user", user);
+				return new BasicView(100);
+			}
 		} catch (BasicCodeException e) {
 			return new BasicView(e.getCode());
 		}
-		return new BasicView(100);
+		return new BasicView(102);
 	}
 }
